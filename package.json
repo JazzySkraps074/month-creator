@@ -1,0 +1,16 @@
+{
+  "name": "month-creator",
+  "version": "1.0.0",
+  "main": "month.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "D": "^1.0.0",
+    "jest": "^30.5.2"
+  }
+}
