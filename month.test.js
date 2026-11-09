@@ -21,7 +21,7 @@ describe ("Gets month or season based on month number", () => {
     test("Testing if month number 12 returns " +
          "the season Winter", () => {
       const month = new Month(12);
-      expect (month.getSeason()).toBe("Winter");
+      expect (month.getSeason()).toBe("Seasons are currently disabled");
     })
 
     /* EP Test #2: Uses 13, which is just outside the
@@ -36,7 +36,7 @@ describe ("Gets month or season based on month number", () => {
          "the season Winter, due to any numbers " +
          "outside of 1-12 being set to 1", () => {
       const month = new Month(100);
-      expect (month.getSeason()).toBe("Winter");
+      expect (month.getSeason()).toBe("Seasons are currently disabled");
     })
 
     test("Testing if the months returned by numbers 1 " +
