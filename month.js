@@ -25,7 +25,7 @@
     }
     
     getMonthNumber() {
-        return monthNumber;
+        return this.monthNumber;
     }
     
     getMonthName() {
@@ -41,7 +41,7 @@
         if (!ENABLE_SEASON) {
             return "Seasons are currently disabled";
         }
-        
+
         if (this.monthNumber == 12 || this.monthNumber <= 2)
            return "Winter";
         else if (this.monthNumber >= 3 && this.monthNumber <= 5)
@@ -59,13 +59,8 @@
     }
     
     equals(month2) {      
-        if (this.monthNumber == month2.monthNumber) {
-            return "Yes";
-        } else {
-            return "No";
-        }
+        return this.monthNumber == month2.monthNumber;
     }
-
 }
         
     let Jan = new Month(1);
