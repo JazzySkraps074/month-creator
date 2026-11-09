@@ -43,7 +43,7 @@ describe ("Gets month or season based on month number", () => {
          " and 12 are equal, and returns No", () => {
       const month1 = new Month(1);
       const month2 = new Month(12)
-      expect (month1.equals(month2)).toBe("No");
+      expect (month1.equals(month2)).toBe(false);
     })
 
     /* A test double is not needed here because there is no external
