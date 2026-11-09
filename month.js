@@ -4,6 +4,8 @@
  * a class for months and seasons of the year
 */
 
+    const ENABLE_SEASON = false;
+
     let monthNumber;
     
     class Month {
@@ -36,6 +38,10 @@
     }
     
     getSeason() {
+        if (!ENABLE_SEASON) {
+            return "Seasons are currently disabled";
+        }
+        
         if (this.monthNumber == 12 || this.monthNumber <= 2)
            return "Winter";
         else if (this.monthNumber >= 3 && this.monthNumber <= 5)
