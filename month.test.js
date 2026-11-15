@@ -3,7 +3,7 @@ console.log(Month);
 
 describe ("Gets month or season based on month number", () => {
 
-    /* EP Test #1: Uses 0, which is just outside the
+    /* EP Test #1: Uses 0, which is outside the
        valid range of 1-12 */
     test("Testing if month number 0 changes to 1 " +
          " and returns January", () => {
