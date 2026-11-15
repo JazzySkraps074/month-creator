@@ -4,6 +4,7 @@
  * a class for months and seasons of the year
 */
 
+    const ENABLE_OUT_OF_MONTH_RANGE = false;
     const ENABLE_SEASON = false;
 
     let monthNumber;
@@ -12,15 +13,22 @@
     constructor(m) {
         this.monthNumber = m;
 
-        if (m < 1 || m > 12)
-            this.monthNumber = 1;
+        if (ENABLE_OUT_OF_MONTH_RANGE) {
+            if (m < 1 || m > 12) {
+                this.monthNumber = 1;
+            } else {
+                return "Month is out of range";
+        }
     }
 
     setMonthNumber (m) {
-        if (m < 1 || m > 12) {
-            this.monthNumber = 1;
-        } else {
-            this.monthNumber = m;
+         this.monthNumber = m;
+        
+        if (ENABLE_OUT_OF_MONTH_RANGE) {
+            if (m < 1 || m > 12) {
+                this.monthNumber = 1;
+            } else {
+                return "Month is out of range";
         }
     }
     
