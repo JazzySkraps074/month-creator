@@ -58,8 +58,12 @@
                 + "Season: " + this.getSeason() + "\n";
     }
     
-    equals(month2) {      
-        return this.monthNumber == month2.monthNumber;
+    equals(month2) {
+        if (this.monthNumber == month2.monthNumber) {
+            return "Yes"
+        } else if (this.monthNumber != month2.monthNumber) {
+            return "No"
+        }
     }
 }
         
