@@ -13,22 +13,16 @@
     constructor(m) {
         this.monthNumber = m;
 
-        if (ENABLE_OUT_OF_MONTH_RANGE) {
-            if (m < 1 || m > 12) {
-                this.monthNumber = 1;
-            } else {
-                return "Month is out of range";
+        if (m < 1 || m > 12) {
+            this.monthNumber = 1;
         }
     }
 
     setMonthNumber (m) {
-         this.monthNumber = m;
-        
-        if (ENABLE_OUT_OF_MONTH_RANGE) {
-            if (m < 1 || m > 12) {
-                this.monthNumber = 1;
-            } else {
-                return "Month is out of range";
+        if (m < 1 || m > 12) {
+            this.monthNumber = 1;
+        } else {
+            this.monthNumber = m;
         }
     }
     
