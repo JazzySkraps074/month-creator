@@ -78,9 +78,9 @@ function reportMetrics() {
         : (invalidMonthInputs / totalMonthObjects) * 100;
 
     console.log("-----MONTH CREATOR METRICS-----");
-    console.log("Number of Month Objects created: ", totalMonthObjects);
-    console.log("Number of Invalid Month inputs: ", invalidMonthInputs);
-    console.log("Invalid Input Rate: ", validationRate.toFixed(2) + "%");
+    console.log("Number of Month Objects created:", totalMonthObjects);
+    console.log("Number of Invalid Month inputs:", invalidMonthInputs);
+    console.log("Invalid Input Rate:", validationRate.toFixed(2) + "%");
 }
         
     let Jan = new Month(1);
