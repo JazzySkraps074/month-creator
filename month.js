@@ -10,8 +10,9 @@
     let invalidMonthInputs = 0;
     
     class Month {
-    constructor(m) {
+    constructor(m, c) {
         totalMonthObjects++;
+        this.config = c;
 
         if (m < 1 || m > 12) {
             invalidMonthInputs++;
@@ -44,7 +45,7 @@
     }
     
     getSeason() {
-        if (!config.ENABLE_SEASON) {
+        if (!this.config.ENABLE_SEASON) {
             return "Seasons are currently disabled";
         }
 
@@ -81,9 +82,9 @@ function reportMetrics() {
     console.log("Invalid Input Rate:", validationRate.toFixed(2) + "%");
 }
         
-    let Jan = new Month(1);
-    let Dec = new Month(12);
-    let InvalidMonth = new Month(15);
+    let Jan = new Month(1, true);
+    let Dec = new Month(12, false);
+    let InvalidMonth = new Month(15, false);
         
     console.log(Jan.toString());
     console.log(Dec.toString());
