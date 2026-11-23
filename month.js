@@ -3,9 +3,7 @@
  * aggregation, constructors, and methods, to create
  * a class for months and seasons of the year
 */
-
-    const ENABLE_OUT_OF_MONTH_RANGE = false;
-    const ENABLE_SEASON = false;
+    const config = require(./config.json);
 
     let monthNumber;
     let totalMonthObjects = 0;
@@ -46,7 +44,7 @@
     }
     
     getSeason() {
-        if (!ENABLE_SEASON) {
+        if (!config.ENABLE_SEASON) {
             return "Seasons are currently disabled";
         }
 
