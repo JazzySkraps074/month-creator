@@ -3,14 +3,14 @@
  * aggregation, constructors, and methods, to create
  * a class for months and seasons of the year
 */
-    const config = require(./config.json);
+    const config = require("./config.json");
 
     let monthNumber;
     let totalMonthObjects = 0;
     let invalidMonthInputs = 0;
     
     class Month {
-    constructor(m, c) {
+    constructor(m, c = config) {
         totalMonthObjects++;
         this.config = c;
 
@@ -82,9 +82,9 @@ function reportMetrics() {
     console.log("Invalid Input Rate:", validationRate.toFixed(2) + "%");
 }
         
-    let Jan = new Month(1, true);
-    let Dec = new Month(12, false);
-    let InvalidMonth = new Month(15, false);
+    let Jan = new Month(1, {ENABLE_SEASON: true});
+    let Dec = new Month(12, {ENABLE_SEASON: false});
+    let InvalidMonth = new Month(15, {ENABLE_SEASON: false});
         
     console.log(Jan.toString());
     console.log(Dec.toString());
