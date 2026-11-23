@@ -25,20 +25,40 @@ describe ("Gets month or season based on month number", () => {
         expect (month.getSeason()).toBe("Seasons are currently disabled");
     })
 
+    test("Testing if month number 1 returns " +
+         "Winter when seasons are enabled", () => {
+        const config = {ENABLE_SEASON: true};
+        const month = new Month(1, config);
+        expect (month.getSeason()).toBe("Winter");
+    })
+
+    test("Testing if month number 4 returns " +
+         "Spring when seasons are enabled", () => {
+        const config = {ENABLE_SEASON: true};
+        const month = new Month(4, config);
+        expect (month.getSeason()).toBe("Spring");
+    })
+
+    test("Testing if month number 7 returns " +
+         "Summer when seasons are enabled", () => {
+        const config = {ENABLE_SEASON: true};
+        const month = new Month(7, config);
+        expect (month.getSeason()).toBe("Summer");
+    })
+
+    test("Testing if month number 10 returns " +
+         "Fall when seasons are enabled", () => {
+        const config = {ENABLE_SEASON: true};
+        const month = new Month(10, config);
+        expect (month.getSeason()).toBe("Fall");
+    })
+
     /* EP Test #2: Uses 13, which is just outside the
        valid range of 1-12 */
     test("Testing if month number 13 changes to 1 " +
          " and returns January", () => {
         const month = new Month(13);
         expect (month.getMonthName()).toBe("January");
-    })
-
-    test("Testing if month number 100 returns " +
-         "Winter when seasons are enabled, due to any numbers " +
-         "outside of 1-12 being set to 1", () => {
-        const config = {ENABLE_SEASON: true};
-        const month = new Month(100, config);
-        expect (month.getSeason()).toBe("Winter");
     })
 
     test("Testing if the months returned by numbers 1 " +
