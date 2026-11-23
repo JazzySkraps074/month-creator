@@ -8,18 +8,24 @@
     const ENABLE_SEASON = false;
 
     let monthNumber;
+    let totalMonthObjects = 0;
+    let invalidMonthInputs = 0;
     
     class Month {
     constructor(m) {
-        this.monthNumber = m;
+        totalMonthObjects++;
 
         if (m < 1 || m > 12) {
+            invalidMonthInputs++;
             this.monthNumber = 1;
+        } else {
+            this.monthNumber = m;
         }
     }
 
     setMonthNumber (m) {
         if (m < 1 || m > 12) {
+            invalidMonthInputs++;
             this.monthNumber = 1;
         } else {
             this.monthNumber = m;
@@ -61,22 +67,33 @@
     }
     
     equals(month2) {
-        if (this.monthNumber == month2.monthNumber) {
-            return "Yes"
-        } else if (this.monthNumber != month2.monthNumber) {
-            return "No"
-        }
+        return this.monthNumber === month2.monthNumber
+            ? "Yes" : "No";
     }
+}
+
+function reportMetrics() {
+    const validationRate = totalMonthObjects === 0
+        ? 0
+        : (invalidMonthInputs / totalMonthObjects) * 100;
+
+    console.log("-----MONTH CREATOR METRICS-----");
+    console.log("Number of Month Objects created: ", totalMonthObjects);
+    console.log("Number of Invalid Month inputs: ", invalidMonthInputs);
+    console.log("Invalid Input Rate: ", validationRate.toFixed(2) + "%");
 }
         
     let Jan = new Month(1);
     let Dec = new Month(12);
+    let InvalidMonth = new Month(15);
         
     console.log(Jan.toString());
     console.log(Dec.toString());
         
     console.log("Are these months the same? " 
                         + Jan.equals(Dec));
+
+    reportMetrics();
     
 module.exports = Month;
 
