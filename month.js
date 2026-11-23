@@ -67,7 +67,7 @@
     
     equals(month2) {
         return this.monthNumber === month2.monthNumber
-            ? "Yes\n" : "No\n";
+            ? "Yes" : "No";
     }
 }
 
